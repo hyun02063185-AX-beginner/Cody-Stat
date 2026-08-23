@@ -3,7 +3,7 @@
 > 코디세이 교육생(마리너)이 직접 운영하는 세션 플랫폼 **cody-stat(출항일지)** 의 인계·운영·발전을 위한 저장소입니다.
 > 코드가 아니라 **의사결정과 문서**를 관리하는 곳입니다.
 
-📄 **[편성표 & 항해 일정 한눈에 보기](https://<계정명>.github.io/<저장소명>/)**
+📄 **[편성표 & 항해 일정 한눈에 보기](https://hyun02063185-ax-beginner.github.io/Cody-Stat/)**
 💬 의견은 디스코드 또는 [노션 문서](https://ancient-quark-67b.notion.site/) 댓글로 주세요.
 
 ---
@@ -200,7 +200,7 @@
 1. 저장소 **Settings** → 왼쪽 메뉴 **Pages**
 2. Source를 **Deploy from a branch**로 선택
 3. Branch를 `main` / 폴더를 `/ (root)`로 지정하고 저장
-4. 몇 분 뒤 `https://<계정명>.github.io/<저장소명>/` 에서 `index.html`이 열립니다
+4. 몇 분 뒤 `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 에서 `index.html`이 열립니다
 
 저장소를 Public으로 두면 로그인 없이 누구나 볼 수 있습니다. Private 저장소에서 Pages를 쓰려면 유료 플랜이 필요하니, 공개 자료만 올린다는 전제로 Public을 권합니다.
 
@@ -208,7 +208,7 @@
 
 ## 참여하는 법
 
-1. 이 README와 [편성표](https://<계정명>.github.io/<저장소명>/)를 읽습니다
+1. 이 README와 [편성표](https://hyun02063185-ax-beginner.github.io/Cody-Stat/)를 읽습니다
 2. 노션 문서 하단의 **Q1~Q6**에 의견을 남깁니다 (마감: 8/31)
 3. 9월 3일 이후 발대식에서 역할을 확정합니다
 4. 문서를 고칠 때는 PR을 올리거나, 익숙하지 않다면 디스코드에 알려주세요
