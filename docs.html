@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문서 체계 — 무엇을 누가 언제 남기는가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="index.html">개요 · 편성</a>
+    <a href="roles.html">직군 지도</a>
+    <a href="docs.html" class="on">문서 체계</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">Document System · 기록의 구조</div>
+    <h1>무엇을 누가 언제 남기는가
+      <span class="sub">1년 6개월 동안 사람이 바뀝니다. 문서는 그 사이를 잇는 유일한 수단입니다.</span>
+    </h1>
+    <p class="lede">바이브코딩으로 만든 코드는 언제든 다시 만들 수 있습니다. 하지만 <b style="color:var(--parch);font-weight:500">왜 그렇게 만들었는지</b>는 다시 만들 수 없습니다. 그래서 이 프로젝트에서 가장 값진 산출물은 서비스가 아니라 기록입니다.</p>
+  </header>
+
+  <section>
+    <div class="sec-head"><h2>세 가지 원칙</h2><span class="tag">GROUND RULES</span><div class="rule"></div></div>
+    <div class="rules">
+      <div class="rule-item">
+        <div class="n">하나</div>
+        <h4>문서마다 담당이 한 명</h4>
+        <p>“팀이 관리”는 아무도 관리하지 않는다는 뜻입니다. 각 문서 맨 위에 담당자 이름과 최종 갱신일을 적습니다.</p>
+      </div>
+      <div class="rule-item">
+        <div class="n">둘</div>
+        <h4>결정은 반드시 남깁니다</h4>
+        <p>결과만이 아니라 배경과 <b>탈락한 대안</b>까지. 버린 선택지가 가장 값진 기록입니다.</p>
+      </div>
+      <div class="rule-item">
+        <div class="n">셋</div>
+        <h4>틀린 것은 누구나 고칩니다</h4>
+        <p>담당이 아니어도 고치고, 담당에게 알립니다. 그것이 문서가 살아 있는 방법입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>구조</h2><span class="tag">REPOSITORY</span><div class="rule"></div></div>
+<pre class="tree">.
+├── <b>index.html</b>              공개 페이지
+├── <b>README.md</b>               프로젝트 전체 안내
+└── <b>docs/</b>
+    ├── <i>00-decisions/</i>       <b>결정 기록 — 가장 중요</b>
+    │   ├── decision-log.md    결정 사항 한 줄 로그
+    │   └── adr/               큰 결정의 배경과 대안
+    │
+    ├── <i>01-handover/</i>        인계
+    │   ├── checklist.md       인수인계 체크리스트
+    │   ├── accounts.md        계정·권한 목록 (비밀값 제외)
+    │   └── qna.md             원작자 질의응답
+    │
+    ├── <i>02-product/</i>         기획
+    │   ├── backlog.md         만들 것 목록
+    │   ├── research/          사용자 인터뷰 기록
+    │   └── specs/             기능별 요구사항·화면 설계
+    │
+    ├── <i>03-tech/</i>            기술
+    │   ├── architecture.md    시스템 구조
+    │   ├── data-model.md      데이터 구조
+    │   ├── deploy.md          배포 절차와 되돌리기
+    │   └── runbook.md         문제 생겼을 때 대응 순서
+    │
+    ├── <i>04-ops/</i>             운영
+    │   ├── policy.md          세션·장소·게시 정책
+    │   ├── privacy.md         개인정보 수집·보관·삭제
+    │   ├── release-notes.md   변경 이력 공지
+    │   └── faq.md             자주 묻는 질문
+    │
+    ├── <i>05-metrics/</i>         지표
+    │   └── metrics.md         지표 정의와 월간 기록
+    │
+    └── <i>06-team/</i>            팀
+        ├── roster.md          현재 역할 배정
+        ├── rotation.md        로테이션 이력
+        └── onboarding.md      새로 합류한 사람이 읽는 문서</pre>
+    <div class="callout" style="margin-top:16px">
+      <b>비밀값은 어떤 문서에도 적지 않습니다.</b> 토큰·비밀번호·API 키는 저장소에 올라가는 순간 되돌릴 수 없습니다. <code>accounts.md</code>에는 “어떤 계정이 있고 누가 접근 권한을 갖는지”만 적습니다.
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>담당과 주기</h2><span class="tag">WHO WRITES WHAT</span><div class="rule"></div></div>
+    <table>
+      <thead><tr><th>문서</th><th>담당</th><th>갱신 시점</th></tr></thead>
+      <tbody>
+        <tr><td>decision-log.md</td><td>PO</td><td>결정이 날 때마다</td></tr>
+        <tr><td>adr/</td><td>결정을 주도한 팀</td><td>큰 기술·방향 결정 시</td></tr>
+        <tr><td>01-handover/*</td><td>기술 오너</td><td>9월 인계 기간</td></tr>
+        <tr><td>backlog.md</td><td>프로덕트 기획</td><td>주 1회</td></tr>
+        <tr><td>research/</td><td>프로덕트 기획</td><td>인터뷰할 때마다</td></tr>
+        <tr><td>specs/</td><td>프로덕트 기획</td><td>기능 착수 전</td></tr>
+        <tr><td>architecture.md · data-model.md</td><td>기술 오너</td><td>구조가 바뀔 때</td></tr>
+        <tr><td>deploy.md · runbook.md</td><td>기술 오너</td><td>절차가 바뀔 때</td></tr>
+        <tr><td>policy.md · faq.md</td><td>운영 · 커뮤니티</td><td>정책이 바뀔 때</td></tr>
+        <tr><td>privacy.md</td><td>개인정보 담당</td><td>수집 항목이 바뀔 때</td></tr>
+        <tr><td>release-notes.md</td><td>구현</td><td>배포할 때마다</td></tr>
+        <tr><td>metrics.md</td><td>프로덕트 기획</td><td>월 1회</td></tr>
+        <tr><td>roster.md · rotation.md</td><td>PO</td><td>배정이 바뀔 때</td></tr>
+        <tr><td>onboarding.md</td><td>운영 · 커뮤니티</td><td>분기 1회 점검</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>특히 챙길 것</h2><span class="tag">KEY DOCS</span><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card accent-b">
+        <div class="top"><h3>결정 로그</h3></div>
+        <div class="why">담당 · PO</div>
+        <ul>
+          <li>날짜 / 결정 / 배경 / 결정자 네 칸</li>
+          <li>되돌리기 어려운 것, 돈이 드는 것, 여러 사람에게 영향 가는 것</li>
+          <li>이 저장소에서 가장 중요한 파일</li>
+        </ul>
+      </div>
+      <div class="card accent-t">
+        <div class="top"><h3>인터뷰 기록</h3></div>
+        <div class="why">담당 · 프로덕트 기획</div>
+        <ul>
+          <li>들은 말을 요약하지 말고 그대로</li>
+          <li>해석은 바뀌지만 발언은 안 바뀝니다</li>
+          <li>백로그 항목마다 여기 링크를 답니다</li>
+        </ul>
+      </div>
+      <div class="card accent-c">
+        <div class="top"><h3>런북</h3></div>
+        <div class="why">담당 · 기술 오너</div>
+        <ul>
+          <li>문제 생겼을 때 순서대로 뭘 해보는지</li>
+          <li>새벽에 당황한 사람이 그대로 따라 할 수 있게</li>
+          <li>되돌리는 방법이 배포 방법보다 중요합니다</li>
+        </ul>
+      </div>
+      <div class="card accent-b">
+        <div class="top"><h3>지표</h3></div>
+        <div class="why">담당 · 프로덕트 기획</div>
+        <ul>
+          <li>세션 개설 수 / 개설자 수</li>
+          <li>비SW 세션 비중, 저녁·주말 비중</li>
+          <li><b>신규 개설자 수</b> — 0이면 커뮤니티가 닫히는 중</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>자리를 넘길 때</h2><span class="tag">ROTATION</span><div class="rule"></div></div>
+    <p class="note">3개월마다 역할이 바뀝니다. 넘길 때 네 가지를 합니다.</p>
+    <div class="voyage">
+      <div class="leg"><h4>담당 문서를 최신으로</h4><p>지금까지 미룬 것을 여기서 정리합니다.</p></div>
+      <div class="leg"><h4>문서 맨 위 담당자 이름 변경</h4><p>이름이 안 바뀐 문서는 아무도 안 봅니다.</p></div>
+      <div class="leg"><h4>인계 대화를 rotation.md에 한 단락</h4><p>무엇을 넘겼고 무엇이 미해결인지.</p></div>
+      <div class="leg"><h4>계정 권한 추가, 기존 권한은 2주 유예</h4><p>바로 회수하면 문제가 생겼을 때 아무도 손을 못 댑니다.</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px">
+      문서가 최신이면 인계는 <b>30분</b>이면 끝납니다. 아니면 <b>며칠</b>이 걸립니다. 그 차이가 이 체계가 존재하는 이유입니다.
+    </div>
+  </section>
+
+  <footer>
+    문서 규칙 전문은 저장소의 <b>docs/DOCUMENT-GUIDE.md</b>에 있습니다. → <a href="index.html">개요로 돌아가기</a>
+  </footer>
+
+</div>
+</body>
+</html>

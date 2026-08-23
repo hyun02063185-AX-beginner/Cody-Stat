@@ -3,133 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>마리너 자율 프로젝트 — 편성표 & 항해 일정</title>
+<title>마리너 자율 프로젝트 — 편성표 &amp; 항해 일정</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --deep:#0A1E30;
-    --hull:#12304A;
-    --hull-2:#173D5E;
-    --line:#2C5677;
-    --parch:#EDE4CE;
-    --steel:#93AEC4;
-    --teal:#49B3A6;
-    --brass:#E4A03C;
-    --coral:#DE6B57;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--deep);
-    color:var(--parch);
-    font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
-    font-weight:300;
-    line-height:1.6;
-    padding:32px 20px 56px;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(147,174,196,.045) 0 1px, transparent 1px 40px),
-      repeating-linear-gradient(90deg, rgba(147,174,196,.045) 0 1px, transparent 1px 40px);
-  }
-  .wrap{max-width:1000px;margin:0 auto}
-
-  /* ---------- header ---------- */
-  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:38px}
-  .eyebrow{
-    font-size:11px;letter-spacing:.28em;color:var(--teal);
-    text-transform:uppercase;font-weight:600;margin-bottom:14px;
-  }
-  h1{
-    font-family:'Gowun Batang',serif;font-weight:700;
-    font-size:clamp(28px,5.2vw,44px);line-height:1.25;letter-spacing:-.01em;
-  }
-  h1 .sub{display:block;color:var(--steel);font-size:clamp(14px,2.4vw,18px);font-weight:400;margin-top:10px;letter-spacing:0}
-  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:20px;font-size:12.5px;color:var(--steel)}
-  .meta b{color:var(--parch);font-weight:500}
-
-  /* ---------- section ---------- */
-  section{margin-bottom:46px}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
-  .sec-head h2{
-    font-family:'Gowun Batang',serif;font-size:21px;font-weight:700;letter-spacing:-.01em;
-  }
-  .sec-head .tag{font-size:11px;color:var(--steel);letter-spacing:.16em}
-  .rule{flex:1;height:1px;background:var(--line)}
-
-  /* ---------- org ---------- */
-  .po{
-    background:var(--hull-2);border:1px solid var(--line);border-radius:3px;
-    padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;
-    border-left:3px solid var(--brass);
-  }
-  .po .who{font-family:'Gowun Batang',serif;font-size:18px;font-weight:700}
-  .po .desc{font-size:13px;color:var(--steel)}
-  .mast{width:1px;height:26px;background:var(--line);margin:0 auto}
-
-  .crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
-  .card{
-    background:var(--hull);border:1px solid var(--line);border-radius:3px;
-    padding:18px 18px 20px;display:flex;flex-direction:column;
-  }
-  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:4px}
-  .card h3{font-family:'Gowun Batang',serif;font-size:16.5px;font-weight:700;line-height:1.35}
-  .count{
-    font-size:11px;font-weight:600;letter-spacing:.06em;white-space:nowrap;
-    padding:3px 9px;border-radius:2px;background:rgba(73,179,166,.14);color:var(--teal);
-    border:1px solid rgba(73,179,166,.32);
-  }
-  .card .why{font-size:11.5px;color:var(--brass);letter-spacing:.02em;margin-bottom:12px}
-  .card ul{list-style:none;font-size:13px;color:var(--steel);display:flex;flex-direction:column;gap:6px}
-  .card li{padding-left:13px;position:relative}
-  .card li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:1px;background:var(--line)}
-  .card.tech{border-left:3px solid var(--coral)}
-  .card.plan{border-left:3px solid var(--teal)}
-  .card.build{border-left:3px solid var(--teal)}
-  .card.ops{border-left:3px solid var(--teal)}
-
-  /* ---------- rules ---------- */
-  .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-  .rule-item{border-top:1px solid var(--line);padding-top:14px}
-  .rule-item .n{
-    font-family:'Gowun Batang',serif;font-size:12px;color:var(--brass);
-    letter-spacing:.1em;margin-bottom:7px
-  }
-  .rule-item h4{font-size:14.5px;font-weight:600;margin-bottom:6px}
-  .rule-item p{font-size:12.5px;color:var(--steel);line-height:1.65}
-
-  /* ---------- timeline ---------- */
-  .voyage{position:relative;padding-left:26px}
-  .voyage::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
-  .leg{position:relative;padding-bottom:22px}
-  .leg:last-child{padding-bottom:0}
-  .leg::before{
-    content:'';position:absolute;left:-24px;top:7px;width:9px;height:9px;border-radius:50%;
-    background:var(--deep);border:1.5px solid var(--teal);
-  }
-  .leg.now::before{background:var(--brass);border-color:var(--brass)}
-  .leg .when{font-size:11.5px;letter-spacing:.1em;color:var(--brass);font-weight:600;margin-bottom:3px}
-  .leg h4{font-size:15.5px;font-weight:600;margin-bottom:5px;font-family:'Gowun Batang',serif}
-  .leg p{font-size:13px;color:var(--steel)}
-
-  /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--steel)}
-  footer b{color:var(--parch);font-weight:500}
-
-  @media (max-width:560px){
-    body{padding:24px 14px 40px}
-    .meta{gap:6px 16px}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .card,.leg,.rule-item{animation:rise .5s ease both}
-    .crew .card:nth-child(2){animation-delay:.06s}
-    .crew .card:nth-child(3){animation-delay:.12s}
-    .crew .card:nth-child(4){animation-delay:.18s}
-    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
+
+  <nav>
+    <a href="index.html" class="on">개요 · 편성</a>
+    <a href="roles.html">직군 지도</a>
+    <a href="docs.html">문서 체계</a>
+  </nav>
 
   <header>
     <div class="eyebrow">Codyssey · Mariner Autonomous Project</div>
@@ -140,9 +27,32 @@
       <span>총원 <b>10명</b></span>
       <span>인계 개시 <b>9월 3일</b></span>
       <span>본과정 <b>약 1년 6개월</b></span>
-      <span>PO <b>본인</b></span>
+      <span>문서 상태 <b>초안 v0.1</b></span>
     </div>
+    <p class="lede">퍼실리테이터가 운영하던 세션 플랫폼을 교육생이 넘겨받아, 앞으로 1년 6개월 동안 직접 운영하고 키웁니다. 기존 서비스를 유지하는 데 그치지 않고 새 기능과 새 서비스도 우리가 기획합니다. 서비스 규모가 크지 않아 인계 부담은 적습니다. 그래서 <b style="color:var(--parch);font-weight:500">개발력보다 기획력이 더 중요한 프로젝트</b>로 보고 있습니다.</p>
   </header>
+
+  <section>
+    <div class="sec-head"><h2>왜 하는가</h2><span class="tag">PURPOSE</span><div class="rule"></div></div>
+    <p class="note">서비스 운영 말고도 목적이 하나 더 있습니다. 교육생 중에는 SW 전공자와 비전공자가 섞여 있고, 낮에 상주하는 사람과 저녁·주말에만 오는 사람이 나뉩니다. 플랫폼은 이들이 서로 가르치고 배우는 접점을 만드는 도구입니다.</p>
+    <div class="rules">
+      <div class="rule-item">
+        <div class="n">하나</div>
+        <h4>기능보다 개설자를 늘립니다</h4>
+        <p>세션을 여는 사람이 늘지 않으면 어떤 기능도 소용이 없습니다.</p>
+      </div>
+      <div class="rule-item">
+        <div class="n">둘</div>
+        <h4>비전공자도 가르치는 쪽에 섭니다</h4>
+        <p>각자의 업계 지식이 그 자체로 콘텐츠입니다. 배우기만 하는 자리에 두지 않습니다.</p>
+      </div>
+      <div class="rule-item">
+        <div class="n">셋</div>
+        <h4>기록을 남깁니다</h4>
+        <p>낮에 못 오는 사람이 따라잡을 수 있어야 합니다.</p>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="sec-head"><h2>편성</h2><span class="tag">WHO DOES WHAT</span><div class="rule"></div></div>
@@ -154,8 +64,8 @@
     </div>
     <div class="mast"></div>
 
-    <div class="crew">
-      <div class="card tech">
+    <div class="grid">
+      <div class="card accent-c">
         <div class="top"><h3>기술 오너</h3><span class="count">2명</span></div>
         <div class="why">전공자 필수 · 로테이션 제외</div>
         <ul>
@@ -165,8 +75,7 @@
           <li>인증·데이터 변경 검토</li>
         </ul>
       </div>
-
-      <div class="card plan">
+      <div class="card accent-t">
         <div class="top"><h3>프로덕트 기획</h3><span class="count">3명</span></div>
         <div class="why">비전공자 강점 영역</div>
         <ul>
@@ -176,8 +85,7 @@
           <li>담당 분리 — 세션 / 아카이브 / 지표</li>
         </ul>
       </div>
-
-      <div class="card build">
+      <div class="card accent-t">
         <div class="top"><h3>구현</h3><span class="count">2명</span></div>
         <div class="why">바이브코딩 중심 · 전공·비전공 혼합</div>
         <ul>
@@ -186,8 +94,7 @@
           <li>구현 과정을 세션으로 공개</li>
         </ul>
       </div>
-
-      <div class="card ops">
+      <div class="card accent-t">
         <div class="top"><h3>운영 · 커뮤니티</h3><span class="count">2명</span></div>
         <div class="why">저녁·주말 인원에게 적합</div>
         <ul>
@@ -198,6 +105,7 @@
         </ul>
       </div>
     </div>
+    <p class="note" style="margin-top:16px">각 팀이 실제로 어떤 직군의 일을 맡는지는 <a href="roles.html" style="color:var(--teal)">직군 지도</a>에 정리했습니다.</p>
   </section>
 
   <section>
@@ -255,6 +163,22 @@
         <p>페어 매칭, 개인 항해일지, 미션 연동, 신규 서비스. 그리고 다음 기수로 넘길 준비.</p>
       </div>
     </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>결정이 필요한 것</h2><span class="tag">YOUR CALL</span><div class="rule"></div></div>
+    <p class="note">아래 항목에 의견을 주세요. 디스코드 또는 공유된 노션 문서 댓글로 받습니다.</p>
+    <table>
+      <thead><tr><th>번호</th><th>질문</th><th>선택지</th></tr></thead>
+      <tbody>
+        <tr><td>Q1</td><td>팀별 인원 배분</td><td>늘려야 할 팀 하나만 골라주세요</td></tr>
+        <tr><td>Q2</td><td>9월 3~9일 인계만 하고 기능 추가 없음</td><td>① 동의 ② 너무 느리다 ③ 의견 있음</td></tr>
+        <tr><td>Q3</td><td>3개월 로테이션</td><td>① 좋다 ② 6개월이 낫다 ③ 고정</td></tr>
+        <tr><td>Q4</td><td>1차 개편 1순위</td><td>아카이브 / 도메인 태그 / 세션 요청 / 페어 매칭 / 항해일지</td></tr>
+        <tr><td>Q5</td><td>유료 전환이 필요해지면 비용은</td><td>자유 의견 (재단 지원 없음)</td></tr>
+        <tr><td>Q6</td><td>이 문서에 빠진 것</td><td>자유 의견</td></tr>
+      </tbody>
+    </table>
   </section>
 
   <footer>
