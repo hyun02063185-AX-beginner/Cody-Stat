@@ -10,25 +10,27 @@
 
 ## 지금 상태
 
-저장소를 막 만들었습니다. 공개 페이지는 `index.html` 하나뿐이고, `docs/` 문서 체계는 아직 시작 전입니다.
-CLAUDE.md가 그려둔 구조(공개 페이지 3종, `docs/` 폴더 골격)는 아직 실제로 만들어지지 않았습니다 — 이 문서(CLAUDE.md)와 계획 문서 정도만 있는 상태입니다.
+공개 페이지 3종이 갖춰졌습니다. `docs/` 문서 체계는 아직 시작 전입니다.
 
 **있는 것**
 
-- `index.html` — 공개 페이지 (개요·편성). GitHub Pages로 배포 완료, 정상 접속 확인됨
-- `README.md` — 프로젝트 전체 안내 (단, `<계정명>` `<저장소명>` 플레이스홀더 미교체)
-- `DOCUMENT-GUIDE.md` — 문서 규칙 전문. **저장소 루트**에 있음 (CLAUDE.md는 `docs/DOCUMENT-GUIDE.md`를 전제하므로 위치가 다름)
-- `CLAUDE.md`, `HANDOFF.md` — 이번에 작성됨. **아직 git에 커밋되지 않은 상태(untracked)**였음 — 이번 세션에서 커밋
+- `index.html` `roles.html` `docs.html` — 공개 페이지 3종. 네비게이션 상호 연결 확인됨
+- `style.css` — 세 페이지 공용 스타일. 인라인 스타일이 여기로 분리됨
+- `README.md` — 프로젝트 전체 안내 (단, `<계정명>` `<저장소명>` 플레이스홀더 3곳 미교체)
+- `CLAUDE.md`, `HANDOFF.md` — 작업 규칙과 인계 노트
+- GitHub Pages 배포 — `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 정상 접속 확인
 
-**없는 것**
+**없는 것 / 어긋난 것**
 
-- `roles.html`, `docs.html`, `style.css` — CLAUDE.md 구조에 있지만 실제로는 아직 없음 (공개 페이지는 index.html뿐)
 - `docs/` 폴더 자체가 없음 (00-decisions ~ 06-team 골격 미생성)
+- `DOCUMENT-GUIDE.md`가 **저장소 루트**에 있음. CLAUDE.md와 `docs.html` 본문은 `docs/DOCUMENT-GUIDE.md`를 가리키므로 링크가 어긋난 상태
 - 팀원 확정, 역할 배정
 
 **바뀐 것 (이번 세션)**
 
-- GitHub Pages 설정 완료 → `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 에서 index.html 정상 노출 확인
+- GitHub Pages 설정 및 배포 확인
+- `roles.html` `docs.html` `style.css` 추가, `index.html`을 공용 스타일 기준으로 정리
+- `files.zip`(작업물 전달용 압축본)은 저장소에 넣지 않고 `.gitignore`에 추가
 
 ---
 
@@ -37,10 +39,10 @@ CLAUDE.md가 그려둔 구조(공개 페이지 3종, `docs/` 폴더 골격)는 �
 우선순위 순입니다. 하나 끝낼 때마다 이 목록을 갱신하세요.
 
 - [x] GitHub Pages 설정 (Settings → Pages → main / root) — 배포 확인 완료
-- [ ] `README.md`의 `<계정명>` `<저장소명>` 두 곳을 실제 값(`hyun02063185-AX-beginner` / `Cody-Stat`)으로 교체
-- [ ] `docs/` 폴더 생성하고 `DOCUMENT-GUIDE.md`를 루트에서 `docs/DOCUMENT-GUIDE.md`로 이동 (CLAUDE.md 구조와 맞추기)
-- [ ] `roles.html`, `docs.html`, `style.css` 작성 — 공개 페이지 3종 구조를 실제로 만들기
-- [ ] 세 페이지 만든 뒤 Pages 배포 후 서로 링크가 잘 도는지 확인
+- [x] `roles.html`, `docs.html`, `style.css` 작성 — 공개 페이지 3종 구조 완성
+- [ ] Pages 재배포 후 세 페이지 링크가 실제 URL에서 서로 잘 도는지 확인
+- [ ] `README.md`의 `<계정명>` `<저장소명>` 3곳을 실제 값(`hyun02063185-AX-beginner` / `Cody-Stat`)으로 교체
+- [ ] `docs/` 폴더 생성하고 `DOCUMENT-GUIDE.md`를 루트에서 `docs/DOCUMENT-GUIDE.md`로 이동 — `docs.html`이 이미 그 경로를 안내하고 있음
 - [ ] `docs/00-decisions/decision-log.md` 생성 (빈 표 + 헤더)
 - [ ] `docs/01-handover/checklist.md` 생성 — 9월 3일에 들고 갈 인수인계 체크리스트
 - [ ] `docs/01-handover/qna.md` 생성 — 원작자에게 물어볼 질문 목록
@@ -66,6 +68,7 @@ CLAUDE.md가 그려둔 구조(공개 페이지 3종, `docs/` 폴더 골격)는 �
 
 | 날짜 | 도구 | 한 일 |
 | --- | --- | --- |
+| 2026-08-23 | Claude Code | 공개 페이지 3종(roles·docs·style.css) 추가, index.html 정리, HANDOFF 재갱신 |
 | 2026-08-23 | Claude Code | 실제 저장소 상태 점검 후 HANDOFF 갱신 — 공개 페이지는 index.html 하나뿐, docs/ 폴더 미생성임을 반영 |
 | 2026-08-23 | Claude Code | GitHub Pages 배포 및 접속 확인, CLAUDE.md·HANDOFF.md 커밋 |
 | 2026-08-23 | claude.ai | 저장소 골격 생성 — index.html, README, 문서 가이드, CLAUDE.md, HANDOFF.md |
