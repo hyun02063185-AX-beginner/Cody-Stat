@@ -4,35 +4,36 @@
 **작업을 시작하면 여기를 먼저 읽고, 마칠 때 여기를 갱신하고 커밋합니다.**
 장소가 바뀌어도, 도구가 바뀌어도(채팅 ↔ Claude Code), 모바일에서 이어받아도 이 파일 하나면 됩니다.
 
-최종 갱신: 2026-08-23 · 갱신자: Claude Code
+최종 갱신: 2026-08-24 · 갱신자: Claude Code
 
 ---
 
 ## 지금 상태
 
-공개 페이지 3종과 `docs/` 폴더 골격이 갖춰졌습니다. 실제 문서 내용은 `decision-log.md` 외에는 아직 비어 있습니다.
+공개 페이지 4종과 `docs/` 폴더 골격이 갖춰졌습니다. 실제 문서 내용은 `decision-log.md` 외에는 아직 비어 있습니다.
 
 **있는 것**
 
-- `index.html` `roles.html` `docs.html` — 공개 페이지 3종. 네비게이션 상호 연결 확인됨
-- `style.css` — 세 페이지 공용 스타일
+- `index.html` `roles.html` `docs.html` `vibe-coding.html` — 공개 페이지 4종. 네비게이션 상호 연결 확인됨
+- `style.css` — 네 페이지 공용 스타일. 모바일 폰트 확대·nav 탭 스타일 개선 반영
 - `README.md` — 프로젝트 전체 안내. `<계정명>` `<저장소명>` 플레이스홀더 3곳 모두 실제 값으로 교체됨
 - `CLAUDE.md`, `HANDOFF.md` — 작업 규칙과 인계 노트. 브랜치 규칙은 **완화 기간**(팀원 합류 전까지 main 직접 커밋) 적용 중
 - `docs/DOCUMENT-GUIDE.md` — 문서 규칙 전문. 루트에서 `docs/`로 이동 완료
 - `docs/` 폴더 골격 (00-decisions ~ 06-team) — 생성 완료, 대부분 `.gitkeep`만 있는 빈 폴더
 - `docs/00-decisions/decision-log.md` — 결정 두 건 기록됨 (브랜치 완화, Git을 문서 단일 출처로)
-- GitHub Pages 배포 — `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 및 하위 3개 페이지 모두 200 확인
+- GitHub Pages 배포 — `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 정상 확인 (신규 페이지는 배포 전파 후 재확인 필요)
+- `바이브코딩_특강_소개페이지_콘텐츠.md` — vibe-coding.html의 원본 콘텐츠 초안. 저장소 루트에 그대로 둠
 
 **없는 것**
 
 - `docs/` 하위 실제 문서 파일 (checklist, qna, roster, backlog 등) — decision-log.md 제외하고 전부 빈 폴더
 - 팀원 확정, 역할 배정
+- 바이브코딩 특강 실제 일시·장소 (페이지엔 "추후 공지"로 표기)
 
 **바뀐 것 (이번 세션)**
 
-- CLAUDE.md 브랜치 규칙 완화 — 복원 조건(리뷰어 2명 이상)을 명시
-- `docs/` 골격 생성, `DOCUMENT-GUIDE.md` 이동, `decision-log.md` 신설
-- README 플레이스홀더 3곳 교체
+- `vibe-coding.html`(바이브코딩 특강 안내) 신규 추가, 기존 3개 페이지 nav에 링크 반영
+- CLAUDE.md 구조 설명을 4페이지 기준으로 갱신
 
 ---
 
@@ -45,6 +46,9 @@
 - [x] `README.md` 플레이스홀더 교체
 - [x] `docs/` 폴더 골격 생성, `DOCUMENT-GUIDE.md` 이동
 - [x] `docs/00-decisions/decision-log.md` 생성
+- [x] `vibe-coding.html`(특강 안내) 추가, nav 링크 반영
+- [ ] 배포 후 `vibe-coding.html` 실제 URL 확인 (404 → 200)
+- [ ] 특강 일시·장소 확정되면 `vibe-coding.html`의 "추후 공지" 갱신
 - [ ] `docs/01-handover/checklist.md` 생성 — 9월 3일에 들고 갈 인수인계 체크리스트
 - [ ] `docs/01-handover/qna.md` 생성 — 원작자에게 물어볼 질문 목록
 - [ ] `docs/06-team/roster.md` 생성 — 역할 배정표 (발대식 후 채움)
@@ -70,6 +74,7 @@
 
 | 날짜 | 도구 | 한 일 |
 | --- | --- | --- |
+| 2026-08-24 | Claude Code | 모바일 폰트·nav 탭 스타일 개선, 바이브코딩 특강 안내 페이지(vibe-coding.html) 추가 |
 | 2026-08-23 | Claude Code | 브랜치 규칙 완화, docs/ 골격 생성 및 DOCUMENT-GUIDE 이동, decision-log 신설, README 플레이스홀더 교체 |
 | 2026-08-23 | Claude Code | 공개 페이지 3종(roles·docs·style.css) 추가, index.html 정리, HANDOFF 재갱신 |
 | 2026-08-23 | Claude Code | 실제 저장소 상태 점검 후 HANDOFF 갱신 — 공개 페이지는 index.html 하나뿐, docs/ 폴더 미생성임을 반영 |
