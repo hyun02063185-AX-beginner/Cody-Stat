@@ -24,15 +24,16 @@ body{
 
 /* nav */
 nav{
-  display:flex;flex-wrap:wrap;gap:2px;align-items:center;
-  padding:14px 0 0;margin-bottom:26px;
+  display:flex;flex-wrap:wrap;gap:5px;align-items:center;
+  padding:14px 0 12px;margin-bottom:26px;
+  border-bottom:1px solid var(--line);
 }
 nav a{
-  color:var(--steel);text-decoration:none;font-size:13px;font-weight:400;
-  padding:8px 15px;border:1px solid transparent;border-radius:2px;transition:.15s;
+  color:var(--steel);text-decoration:none;font-size:14px;font-weight:500;
+  padding:9px 16px;border:1px solid transparent;border-radius:4px;transition:.15s;
 }
-nav a:hover{color:var(--parch);background:rgba(147,174,196,.07)}
-nav a.on{color:var(--deep);background:var(--parch);font-weight:600}
+nav a:hover{color:var(--parch);background:rgba(147,174,196,.08)}
+nav a.on{color:var(--deep);background:var(--parch);font-weight:700}
 
 /* header */
 header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:38px}
@@ -116,13 +117,33 @@ footer b{color:var(--parch);font-weight:500}
 footer a{color:var(--teal)}
 
 @media (max-width:560px){
-  body{padding:0 14px 40px}
-  nav a{padding:7px 11px;font-size:12.5px}
+  body{padding:0 14px 40px;font-size:15.5px}
+  nav{gap:6px;padding:12px 0 10px}
+  nav a{flex:1 1 auto;text-align:center;padding:11px 10px;font-size:14.5px}
+  .eyebrow{font-size:11.5px}
+  .meta{font-size:13.5px;gap:8px 20px}
+  .lede{font-size:15px}
   .sec-head{flex-wrap:wrap;gap:8px}
+  .sec-head h2{font-size:19px}
   .sec-head .tag{display:none}
-  table{font-size:12.5px}
-  th,td{padding:9px 8px}
+  .note{font-size:14.5px}
+  .card h3{font-size:17px}
+  .card .why{font-size:12.5px}
+  .card ul{font-size:14px}
+  .count{font-size:11.5px}
+  .po .who{font-size:17px}
+  .po .desc{font-size:14px}
+  .rule-item h4{font-size:15px}
+  .rule-item p{font-size:13.5px}
+  .leg h4{font-size:16px}
+  .leg p{font-size:14px}
+  table{font-size:13.5px}
+  th{font-size:11.5px}
+  th,td{padding:10px 8px}
   td:first-child{white-space:normal}
+  pre.tree{font-size:13px}
+  .callout{font-size:14.5px}
+  footer{font-size:13.5px}
 }
 @media (prefers-reduced-motion:no-preference){
   .card,.leg,.rule-item{animation:rise .5s ease both}
