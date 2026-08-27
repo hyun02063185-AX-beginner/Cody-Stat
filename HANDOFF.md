@@ -77,6 +77,7 @@
 
 | 날짜 | 도구 | 한 일 |
 | --- | --- | --- |
+| 2026-08-27 | Claude Code | 퍼스널컬러 스펙에 드래그앤드롭·영역 직접 선택 반영, 타로 스펙 화면을 3단계(모드 선택/펼치기/결과)로 분리 |
 | 2026-08-27 | Claude Code | 퍼스널컬러·타로 실습 스펙시트 2종 업로드, vibe-coding.html에 "실습 자료" 섹션(STEP 1·2 링크) 추가 |
 | 2026-08-24 | Claude Code | 모바일 폰트·nav 탭 스타일 개선, 바이브코딩 특강 안내 페이지(vibe-coding.html) 추가 |
 | 2026-08-23 | Claude Code | 브랜치 규칙 완화, docs/ 골격 생성 및 DOCUMENT-GUIDE 이동, decision-log 신설, README 플레이스홀더 교체 |
