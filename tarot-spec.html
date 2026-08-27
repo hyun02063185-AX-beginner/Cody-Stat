@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TAROT — 바이브코딩 실습 스펙시트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#120a1f;
+    --surface:#1c1330;
+    --surface-2:#241a3c;
+    --line:#3a2c58;
+    --gold:#d9b872;
+    --purple:#9b7fd6;
+    --text:#f0e9fa;
+    --text-dim:#b3a3cf;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at 20% -10%, #2a1c47 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 10%, #1f1436 0%, transparent 50%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.65;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:64px 24px 96px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:56px;
+    line-height:1.05;
+    margin:0 0 6px;
+    color:#fff;
+    letter-spacing:.01em;
+  }
+  .subtitle{color:var(--text-dim);font-size:16px;margin:0 0 36px;max-width:56ch;}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:56px;}
+  .badge{
+    border:1px solid var(--line);
+    background:var(--surface);
+    border-radius:999px;
+    padding:8px 16px;
+    font-size:13px;
+    color:var(--text-dim);
+  }
+  .badge b{color:var(--gold);font-weight:600;}
+  h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:28px;
+    color:#fff;
+    margin:64px 0 6px;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--purple);
+    font-style:normal;
+  }
+  h2:first-of-type{margin-top:0;}
+  p{color:var(--text-dim);margin:0 0 16px;}
+  .section-desc{margin-bottom:24px;}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:8px;
+    max-height:340px;
+    overflow-y:auto;
+  }
+  .card-item{
+    background:var(--surface);
+    padding:12px 14px;
+    font-size:13px;
+  }
+  .card-item .roman{color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:11px;}
+  .card-item .name{color:var(--text);display:block;margin:2px 0;}
+  .card-item .kw{color:var(--text-dim);font-size:12px;}
+  .req-list{list-style:none;margin:0 0 32px;padding:0;}
+  .req-list li{
+    position:relative;
+    padding:16px 0 16px 34px;
+    border-bottom:1px solid var(--line);
+  }
+  .req-list li:last-child{border-bottom:none;}
+  .req-list .idx{
+    position:absolute;left:0;top:16px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--purple);
+  }
+  .req-list b{color:#fff;font-weight:600;}
+  .tier{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    padding:2px 8px;
+    border-radius:5px;
+    margin-left:8px;
+    vertical-align:middle;
+  }
+  .tier.required{background:rgba(217,184,114,.15);color:var(--gold);}
+  .exclude{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 24px;
+    margin-bottom:8px;
+  }
+  .exclude ul{margin:0;padding-left:18px;color:var(--text-dim);}
+  .exclude li{margin-bottom:6px;}
+  .prompt-box{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:16px;
+  }
+  .prompt-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 18px;
+    border-bottom:1px solid var(--line);
+    background:var(--surface-2);
+  }
+  .prompt-head span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);}
+  .copy-btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    background:var(--gold);
+    color:#1c1330;
+    border:none;
+    padding:7px 14px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:600;
+  }
+  .copy-btn:hover{opacity:.9;}
+  .copy-btn.copied{background:#8fd6a8;}
+  textarea{
+    width:100%;
+    border:none;
+    background:transparent;
+    color:var(--text);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    line-height:1.7;
+    padding:20px 18px;
+    resize:vertical;
+    min-height:520px;
+    display:block;
+  }
+  textarea:focus{outline:2px solid var(--purple);outline-offset:-2px;}
+  .tips{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 24px;
+  }
+  .tips ul{margin:0;padding-left:18px;color:var(--text-dim);}
+  .tips li{margin-bottom:8px;}
+  footer{margin-top:72px;color:var(--text-dim);font-size:12px;text-align:center;}
+  @media (max-width:600px){
+    h1{font-size:38px;}
+    .wrap{padding:40px 16px 72px;}
+    textarea{min-height:420px;font-size:11.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Vibe Coding Practice · 01</p>
+  <h1>Tarot</h1>
+  <p class="subtitle">부채꼴로 펼쳐진 22장의 카드를 뽑아 결과를 확인하는 타로 웹앱. 기능 요구사항과, 그대로 복사해서 CC나 Codex에 붙여넣을 수 있는 개발 지시문입니다.</p>
+
+  <div class="badges">
+    <span class="badge">실습 시간 <b>약 30분</b></span>
+    <span class="badge">카드 수 <b>메이저 아르카나 22장</b></span>
+    <span class="badge">파일 구성 <b>index.html 단일 파일</b></span>
+    <span class="badge">도구 <b>Claude Code / Codex</b></span>
+  </div>
+
+  <h2><span class="num">01</span> 프로젝트 개요</h2>
+  <p class="section-desc">정방향 메이저 아르카나 22장으로 진행하는 타로카드 웹앱. 1장 뽑기와 3장(과거·현재·미래) 뽑기 두 모드를 지원하며, 카드 디자인은 세세한 일러스트 없이 이름과 텍스트로만 표시합니다. 별도 서버나 빌드 과정 없이 브라우저에서 바로 열어 실행됩니다.</p>
+
+  <h2><span class="num">02</span> 카드 데이터</h2>
+  <p class="section-desc">메이저 아르카나 22장, 정방향 의미만 사용합니다.</p>
+  <div class="card-grid" id="cardGrid"></div>
+
+  <h2><span class="num">03</span> 기능 요구사항</h2>
+  <ul class="req-list">
+    <li><span class="idx">01</span><b>셔플 애니메이션</b><span class="tier required">필수</span><br>카드 뒷면 더미가 나타나면 짧게 좌우로 흔들린 뒤(shake), 카드 배열을 무작위로 섞습니다.</li>
+    <li><span class="idx">02</span><b>펼치기(스프레드)</b><span class="tier required">필수</span><br>22장을 부채꼴로 펼쳐 배치합니다. 카드마다 다른 회전각·위치를 주고, 순서대로 딜레이를 두며 나타나게 합니다. 22장이 화면 안에 모두 들어오도록 반경·각도·카드 크기를 조정하세요.</li>
+    <li><span class="idx">03</span><b>모드 전환 (1장 / 3장)</b><span class="tier required">필수</span><br>상단에 토글 버튼 배치. 3장 모드는 클릭 순서대로 "과거 / 현재 / 미래" 자리에 배치하고 라벨을 표시합니다. 별도 랜덤 함수 없이 셔플 단계에서 이미 섞인 배열을 그대로 사용합니다.</li>
+    <li><span class="idx">04</span><b>뒤집기</b><span class="tier required">필수</span><br>선택된 카드가 확대되며 뒷면→앞면으로 뒤집힙니다(CSS 3D transform).</li>
+    <li><span class="idx">05</span><b>결과 표시</b><span class="tier required">필수</span><br>카드 이름(로마숫자·영문·한글)과 키워드 의미를 표시합니다. 3장 모드는 종합 해석 없이 자리별로 개별 나열만 합니다.</li>
+    <li><span class="idx">06</span><b>다시 뽑기 버튼</b><span class="tier required">필수</span><br>결과 화면 하단, 클릭 시 셔플 전 상태로 리셋합니다.</li>
+  </ul>
+
+  <h2><span class="num">04</span> 범위에서 제외</h2>
+  <div class="exclude">
+    <ul>
+      <li>역방향(리버스) 카드 해석</li>
+      <li>마이너 아르카나(완드·컵·소드·펜타클) 카드</li>
+      <li>정교한 카드 일러스트 이미지</li>
+      <li>여러 장을 하나의 서사로 종합하는 AI 생성 해석 (외부 API 호출 없음)</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">05</span> 개발 지시문</h2>
+  <p class="section-desc">아래 내용을 그대로 복사해서 Claude Code나 Codex에 붙여넣으세요.</p>
+  <div class="prompt-box">
+    <div class="prompt-head">
+      <span>tarot-prompt.txt</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <textarea id="promptText" readonly></textarea>
+  </div>
+
+  <h2><span class="num">06</span> 진행 팁</h2>
+  <div class="tips">
+    <ul>
+      <li>한 번에 전체를 요청하기보다 <b>펼치기 → 뽑기 → 뒤집기</b> 순으로 단계를 나눠 확인하며 진행하면 막힌 지점을 짚기 쉽습니다.</li>
+      <li>버그가 보이면 "이어서 해줘" 대신, <b>화면에 보이는 증상을 구체적으로</b> 설명해 주세요 (예: "22장 중 일부가 화면 밖으로 벗어나 안 보임").</li>
+      <li>버튼이 카드 스프레드에 가려지는 등 레이아웃 겹침 이슈가 흔하니, 먼저 확인해보면 좋습니다.</li>
+    </ul>
+  </div>
+
+  <footer>바이브코딩 실습 · 타로카드 스펙시트</footer>
+</div>
+
+<script>
+const cards = [
+  ["0","The Fool","바보","새로운 시작, 순수함, 모험"],
+  ["I","The Magician","마법사","창조력, 의지, 잠재력 실현"],
+  ["II","The High Priestess","여사제","직관, 신비, 잠재의식"],
+  ["III","The Empress","여황제","풍요, 창조, 모성"],
+  ["IV","The Emperor","황제","권위, 안정, 구조"],
+  ["V","The Hierophant","교황","전통, 신념, 가르침"],
+  ["VI","The Lovers","연인","사랑, 조화, 선택"],
+  ["VII","The Chariot","전차","의지, 승리, 통제"],
+  ["VIII","Strength","힘","용기, 인내, 내면의 힘"],
+  ["IX","The Hermit","은둔자","성찰, 고독, 탐구"],
+  ["X","Wheel of Fortune","운명의 수레바퀴","변화, 순환, 운명"],
+  ["XI","Justice","정의","균형, 공정, 인과"],
+  ["XII","The Hanged Man","매달린 사람","희생, 관점 전환, 기다림"],
+  ["XIII","Death","죽음","끝과 시작, 변화, 변형"],
+  ["XIV","Temperance","절제","균형, 조화, 인내"],
+  ["XV","The Devil","악마","속박, 유혹, 집착"],
+  ["XVI","The Tower","탑","급변, 붕괴, 깨달음"],
+  ["XVII","The Star","별","희망, 영감, 치유"],
+  ["XVIII","The Moon","달","불안, 환상, 무의식"],
+  ["XIX","The Sun","태양","기쁨, 성공, 활력"],
+  ["XX","Judgement","심판","각성, 재평가, 부활"],
+  ["XXI","The World","세계","완성, 성취, 통합"]
+];
+document.getElementById('cardGrid').innerHTML = cards.map(c =>
+  `<div class="card-item"><span class="roman">${c[0]}</span><span class="name">${c[1]} (${c[2]})</span><span class="kw">${c[3]}</span></div>`
+).join('');
+
+const promptLines = [
+"# 타로카드 게임 작업지시서",
+"",
+"정방향 메이저 아르카나 22장으로 진행하는 타로카드 웹앱을 만들어줘. 1장 뽑기와 3장(과거·현재·미래) 뽑기 두 가지 모드를 지원해.",
+"",
+"## 조건",
+"- 단일 HTML 파일(index.html) 하나로 완성 — CSS와 JS는 같은 파일에 포함",
+"- 카드 디자인은 세세한 일러스트 없이, 뒷면은 단순한 패턴/색상, 앞면은 카드 이름 텍스트만 표시",
+"- 서버나 빌드 과정 없이 브라우저에서 바로 실행",
+"",
+"## 카드 데이터 (정방향 의미만 사용)",
+...cards.map((c,i) => `${i}. ${c[1]} (${c[2]}) — ${c[3]}`),
+"",
+"## 기능 요구사항 (전부 필수)",
+"- 셔플 애니메이션: 카드 뒷면 더미가 나타나면 짧게 좌우로 흔들린 뒤(shake), 배열을 무작위로 섞음",
+"- 펼치기(스프레드): 22장을 부채꼴로 펼쳐 배치. 카드마다 다른 회전각·위치를 주고 순서대로 딜레이를 두며 나타나게 함. 22장이 화면 안에 모두 들어오도록 반경·각도·카드 크기 조정",
+"- 모드 전환 (1장 / 3장): 상단에 토글 버튼. 3장 모드는 클릭 순서대로 '과거 / 현재 / 미래' 자리에 배치하고 라벨 표시. 별도 랜덤 함수 없이 셔플 단계에서 이미 섞인 배열을 그대로 사용해서 클릭한 카드가 곧 무작위 결과가 되게 함",
+"- 뒤집기: 선택된 카드가 확대되며 뒷면에서 앞면으로 뒤집힘 (CSS 3D transform)",
+"- 결과 표시: 카드 이름(로마숫자·영문·한글)과 키워드 의미 표시. 3장 모드는 종합 해석 문장 없이 자리별로 개별 나열만",
+"- 다시 뽑기 버튼: 결과 화면 하단에 배치, 클릭 시 셔플 전 상태로 리셋",
+"",
+"## 레이아웃 주의사항",
+"- 모드 전환 버튼, 다시 뽑기 버튼 등 UI 컨트롤은 카드 스프레드나 결과 카드에 가려지지 않는 위치에 고정 배치",
+"",
+"## 범위에서 제외",
+"- 역방향(리버스) 해석",
+"- 마이너 아르카나(완드·컵·소드·펜타클)",
+"- 정교한 카드 일러스트 이미지",
+"- 여러 장을 하나의 서사로 종합하는 AI 생성 해석 (외부 API 호출 없이 정적 데이터만 사용)",
+"",
+"## 디자인 톤",
+"- 신비롭고 차분한 분위기 (어두운 배경 + 골드/보라 계열 포인트 컬러)",
+"- 카드 뒷면은 반복 패턴이나 단색 + 테두리로 심플하게",
+"- 큰 화면(발표용 프로젝터) 기준으로 레이아웃 최적화",
+"",
+"## 개발 방식",
+"- 진행 중간중간 어떤 파일을 만들고 어떤 작업을 하는지 간단히 설명하면서 진행",
+"- 완성되면 브라우저에서 바로 열어 테스트하는 방법을 안내"
+].join("\n");
+
+document.getElementById('promptText').value = promptLines;
+
+function copyPrompt(btn){
+  const ta = document.getElementById('promptText');
+  ta.select();
+  navigator.clipboard.writeText(ta.value).then(()=>{
+    const original = btn.textContent;
+    btn.textContent = '복사됨';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = original; btn.classList.remove('copied'); }, 1600);
+  });
+}
+</script>
+</body>
+</html>

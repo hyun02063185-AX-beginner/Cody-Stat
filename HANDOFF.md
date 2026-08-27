@@ -4,7 +4,7 @@
 **작업을 시작하면 여기를 먼저 읽고, 마칠 때 여기를 갱신하고 커밋합니다.**
 장소가 바뀌어도, 도구가 바뀌어도(채팅 ↔ Claude Code), 모바일에서 이어받아도 이 파일 하나면 됩니다.
 
-최종 갱신: 2026-08-24 · 갱신자: Claude Code
+최종 갱신: 2026-08-27 · 갱신자: Claude Code
 
 ---
 
@@ -15,6 +15,7 @@
 **있는 것**
 
 - `index.html` `roles.html` `docs.html` `vibe-coding.html` — 공개 페이지 4종. 네비게이션 상호 연결 확인됨
+- `personal-color-spec.html` `tarot-spec.html` — 특강 실습용 스펙시트 2종. `vibe-coding.html`의 "실습 자료" 섹션에서 STEP 1·2 순서로 연결됨. 자체 스타일 사용, 사이트 nav에는 미포함(독립 문서)
 - `style.css` — 네 페이지 공용 스타일. 모바일 폰트 확대·nav 탭 스타일 개선 반영
 - `README.md` — 프로젝트 전체 안내. `<계정명>` `<저장소명>` 플레이스홀더 3곳 모두 실제 값으로 교체됨
 - `CLAUDE.md`, `HANDOFF.md` — 작업 규칙과 인계 노트. 브랜치 규칙은 **완화 기간**(팀원 합류 전까지 main 직접 커밋) 적용 중
@@ -32,8 +33,8 @@
 
 **바뀐 것 (이번 세션)**
 
-- `vibe-coding.html`(바이브코딩 특강 안내) 신규 추가, 기존 3개 페이지 nav에 링크 반영
-- CLAUDE.md 구조 설명을 4페이지 기준으로 갱신
+- `personal-color-spec.html`, `tarot-spec.html` 업로드 — 외부 작업 파일(`Cody_Vibe_Coding` 폴더)을 저장소로 반입
+- `vibe-coding.html`에 "실습 자료" 섹션 추가 — 두 스펙시트를 STEP 1(퍼스널컬러)·STEP 2(타로) 순서로, 새 탭 링크로 연결
 
 ---
 
@@ -47,6 +48,8 @@
 - [x] `docs/` 폴더 골격 생성, `DOCUMENT-GUIDE.md` 이동
 - [x] `docs/00-decisions/decision-log.md` 생성
 - [x] `vibe-coding.html`(특강 안내) 추가, nav 링크 반영
+- [x] `personal-color-spec.html`, `tarot-spec.html` 업로드 및 `vibe-coding.html` 실습 자료 섹션 연결
+- [ ] 배포 후 실습 스펙시트 2종 실제 URL 확인 (404 → 200)
 - [ ] 배포 후 `vibe-coding.html` 실제 URL 확인 (404 → 200)
 - [ ] 특강 일시·장소 확정되면 `vibe-coding.html`의 "추후 공지" 갱신
 - [ ] `docs/01-handover/checklist.md` 생성 — 9월 3일에 들고 갈 인수인계 체크리스트
@@ -74,6 +77,7 @@
 
 | 날짜 | 도구 | 한 일 |
 | --- | --- | --- |
+| 2026-08-27 | Claude Code | 퍼스널컬러·타로 실습 스펙시트 2종 업로드, vibe-coding.html에 "실습 자료" 섹션(STEP 1·2 링크) 추가 |
 | 2026-08-24 | Claude Code | 모바일 폰트·nav 탭 스타일 개선, 바이브코딩 특강 안내 페이지(vibe-coding.html) 추가 |
 | 2026-08-23 | Claude Code | 브랜치 규칙 완화, docs/ 골격 생성 및 DOCUMENT-GUIDE 이동, decision-log 신설, README 플레이스홀더 교체 |
 | 2026-08-23 | Claude Code | 공개 페이지 3종(roles·docs·style.css) 추가, index.html 정리, HANDOFF 재갱신 |
