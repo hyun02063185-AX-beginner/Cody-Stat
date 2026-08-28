@@ -4,26 +4,26 @@
 **작업을 시작하면 여기를 먼저 읽고, 마칠 때 여기를 갱신하고 커밋합니다.**
 장소가 바뀌어도, 도구가 바뀌어도(채팅 ↔ Claude Code), 모바일에서 이어받아도 이 파일 하나면 됩니다.
 
-최종 갱신: 2026-08-27 · 갱신자: Claude Code
+최종 갱신: 2026-08-28 · 갱신자: Claude Code
 
 ---
 
 ## 지금 상태
 
-공개 페이지 4종과 `docs/` 폴더 골격이 갖춰졌습니다. 실제 문서 내용은 `decision-log.md` 외에는 아직 비어 있습니다.
+공개 페이지 5종과 `docs/` 폴더 골격이 갖춰졌습니다. 실제 문서 내용은 `decision-log.md` 외에는 아직 비어 있습니다.
 
 **있는 것**
 
-- `index.html` `roles.html` `docs.html` `vibe-coding.html` — 공개 페이지 4종. 네비게이션 상호 연결 확인됨
+- `index.html` `roles.html` `docs.html` `vibe-coding.html` `ai-attitude.html` — 공개 페이지 5종. 네비게이션 상호 연결 확인됨 (5개 링크 전 페이지 일치)
 - `personal-color-spec.html` `tarot-spec.html` — 특강 실습용 스펙시트 2종. `vibe-coding.html`의 "실습 자료" 섹션에서 STEP 1·2 순서로 연결됨. 자체 스타일 사용, 사이트 nav에는 미포함(독립 문서)
-- `style.css` — 네 페이지 공용 스타일. 모바일 폰트 확대·nav 탭 스타일 개선 반영
+- `style.css` — 다섯 페이지 공용 스타일. 모바일 폰트 확대·nav 탭 개선에 이어, 장문 아티클용 컴포넌트(`.thesis` `.chapter` `.triad` `.points` `.questions` `.pull`) 추가. 전부 기존 팔레트 변수만 사용
 - `README.md` — 프로젝트 전체 안내. `<계정명>` `<저장소명>` 플레이스홀더 3곳 모두 실제 값으로 교체됨
 - `CLAUDE.md`, `HANDOFF.md` — 작업 규칙과 인계 노트. 브랜치 규칙은 **완화 기간**(팀원 합류 전까지 main 직접 커밋) 적용 중
 - `docs/DOCUMENT-GUIDE.md` — 문서 규칙 전문. 루트에서 `docs/`로 이동 완료
 - `docs/` 폴더 골격 (00-decisions ~ 06-team) — 생성 완료, 대부분 `.gitkeep`만 있는 빈 폴더
 - `docs/00-decisions/decision-log.md` — 결정 두 건 기록됨 (브랜치 완화, Git을 문서 단일 출처로)
-- GitHub Pages 배포 — `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 정상 확인 (신규 페이지는 배포 전파 후 재확인 필요)
-- `바이브코딩_특강_소개페이지_콘텐츠.md` — vibe-coding.html의 원본 콘텐츠 초안. 저장소 루트에 그대로 둠
+- GitHub Pages 배포 — `https://hyun02063185-ax-beginner.github.io/Cody-Stat/` 정상 확인 (ai-attitude.html은 배포 전파 후 재확인 필요)
+- `바이브코딩_특강_소개페이지_콘텐츠.md`, `AI를_대하는_기본_자세.md`, `AI를_대하는_태도_통합원고.md` — 각각 vibe-coding.html·ai-attitude.html의 원본 콘텐츠 초안. 저장소 루트에 그대로 둠
 
 **없는 것**
 
@@ -33,8 +33,10 @@
 
 **바뀐 것 (이번 세션)**
 
-- `personal-color-spec.html`, `tarot-spec.html` 업로드 — 외부 작업 파일(`Cody_Vibe_Coding` 폴더)을 저장소로 반입
-- `vibe-coding.html`에 "실습 자료" 섹션 추가 — 두 스펙시트를 STEP 1(퍼스널컬러)·STEP 2(타로) 순서로, 새 탭 링크로 연결
+- `ai-attitude.html`(AI를 대하는 태도 — 특강 사전 읽기) 신규 추가. 원래 자체 팔레트(Fraunces/Inter/JetBrains Mono, 청록·주황 다크톤)로 만들어져 있던 것을 사이트 공용 `style.css`·폰트·nav 패턴으로 전면 재작성
+- `style.css`에 장문 아티클 전용 컴포넌트 추가 — 전부 기존 CSS 변수만 사용, 새 색 없음
+- `vibe-coding.html` "실습 자료" 섹션 위에 "사전 읽기" 카드 추가 (accent-b) — 사전 읽기 → STEP 1 → STEP 2 순서 명확화
+- 기존 4개 페이지 nav에 "사전 읽기" 링크 반영
 
 ---
 
@@ -49,8 +51,8 @@
 - [x] `docs/00-decisions/decision-log.md` 생성
 - [x] `vibe-coding.html`(특강 안내) 추가, nav 링크 반영
 - [x] `personal-color-spec.html`, `tarot-spec.html` 업로드 및 `vibe-coding.html` 실습 자료 섹션 연결
-- [ ] 배포 후 실습 스펙시트 2종 실제 URL 확인 (404 → 200)
-- [ ] 배포 후 `vibe-coding.html` 실제 URL 확인 (404 → 200)
+- [x] `ai-attitude.html` 추가, 사이트 팔레트로 재작성, 5개 페이지 nav·"사전 읽기" 카드 반영
+- [ ] 배포 후 `ai-attitude.html`, 실습 스펙시트 2종 실제 URL 확인 (404 → 200)
 - [ ] 특강 일시·장소 확정되면 `vibe-coding.html`의 "추후 공지" 갱신
 - [ ] `docs/01-handover/checklist.md` 생성 — 9월 3일에 들고 갈 인수인계 체크리스트
 - [ ] `docs/01-handover/qna.md` 생성 — 원작자에게 물어볼 질문 목록
@@ -77,6 +79,7 @@
 
 | 날짜 | 도구 | 한 일 |
 | --- | --- | --- |
+| 2026-08-28 | Claude Code | ai-attitude.html 추가 및 사이트 팔레트로 재작성, style.css에 아티클 컴포넌트 추가, 5개 페이지 nav 반영 |
 | 2026-08-27 | Claude Code | 퍼스널컬러 스펙에 드래그앤드롭·영역 직접 선택 반영, 타로 스펙 화면을 3단계(모드 선택/펼치기/결과)로 분리 |
 | 2026-08-27 | Claude Code | 퍼스널컬러·타로 실습 스펙시트 2종 업로드, vibe-coding.html에 "실습 자료" 섹션(STEP 1·2 링크) 추가 |
 | 2026-08-24 | Claude Code | 모바일 폰트·nav 탭 스타일 개선, 바이브코딩 특강 안내 페이지(vibe-coding.html) 추가 |
