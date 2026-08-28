@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI를 대하는 태도 — 바이브코딩 특강 사전 읽기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="index.html">개요 · 편성</a>
+    <a href="roles.html">직군 지도</a>
+    <a href="docs.html">문서 체계</a>
+    <a href="vibe-coding.html">특강 안내</a>
+    <a href="ai-attitude.html" class="on">사전 읽기</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">Before the Session · 사전 읽기</div>
+    <h1>AI를 대하는 태도
+      <span class="sub">바이브코딩으로 무언가를 만들고, 그것을 계속 관리하려는 사람을 위한 다섯 가지 이야기</span>
+    </h1>
+    <p class="lede">특강에 앞서 한 번 읽어두면 좋은 글의 요약본입니다. 코딩 스킬이 아니라 <b style="color:var(--parch);font-weight:500">태도</b>를 다룹니다. 스킬은 어디서든 익힐 수 있지만, 태도는 누가 짚어주지 않으면 그냥 지나가기 쉽습니다.</p>
+  </header>
+
+  <div class="thesis">
+    <div class="label">이 글의 한 줄</div>
+    <p>AI는 <em>손</em>을 대신할 수 있어도, <em>판단</em>을 대신할 수는 없다.</p>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>시작하기 전</h2><span class="tag">PART 1</span><div class="rule"></div></div>
+    <p class="note">무엇을 준비하고 시작할 것인가</p>
+
+    <div class="chapter">
+      <div class="chapter-title"><span class="n">01</span><h3>AI를 대하는 기본 자세</h3></div>
+      <p>AI를 정답자판기처럼 쓰든 인격체처럼 대하든, 그 자체는 잘못이 아닙니다. 다만 <b>산출물을 만들고 계속 관리해야 하는 상황</b>이라면 전혀 다른 축의 질문이 생깁니다 — 지금 이 상황을 누가 주도하고 있는가.</p>
+      <div class="pull">결과물을 그대로 받아쓰는 입장이 아니라, 무엇을 만들지 결정하고 그 결과를 최종적으로 책임지는 입장에 서야 합니다.</div>
+      <ul class="points">
+        <li><b>구조는 내가 먼저</b> — 완벽한 설계는 필요 없습니다. "섞는다 → 뽑는다 → 보여준다" 정도의 큰 흐름만이라도 <b>내 언어로 먼저</b> 말할 수 있어야 합니다.</li>
+        <li><b>어디까지 이해하면 되나</b> — 코드 모든 줄이 아닙니다. 무엇이 있고, 어떤 순서로 동작하며, 어디를 건드리면 무엇이 바뀌는지를 <b>남에게 설명할 수 있으면</b> 충분합니다.</li>
+        <li><b>이해가 안 되면 될 때까지</b> — 같은 설명을 다른 방식으로 여러 번 요청해서라도 이해하고 넘어가야, 나중에 디버깅과 관리가 가능해집니다.</li>
+        <li><b>손은 AI가, 판단은 내가</b> — 정리도 확인도 기록도 AI에게 맡길 수 있습니다. 다만 무엇을 정리할지, 그 결과가 맞는지, 무엇을 남길지 <b>판단하는 사람은 나</b>여야 합니다.</li>
+      </ul>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-title"><span class="n">02</span><h3>AI에게 시키기 전에, 내가 먼저 정리해야 할 것</h3></div>
+      <p>주도권은 선언만으로 생기지 않습니다. "알아서 잘 만들어줘"에는 방향이 없고, 방향이 없으면 결과가 나와도 그것이 맞는지 판단할 기준이 없습니다. <b>정리는 그 판단 기준을 스스로 만드는 작업</b>입니다.</p>
+      <p>미뤄둔 이해는 사라지지 않고, 더 급한 순간에 더 비싼 값으로 돌아옵니다. AI가 되짚어줄 수 있는 것은 결과물에 남아 있는 내용까지입니다. <b>왜 이렇게 만들기로 했는지, 무엇을 포기하고 무엇을 택했는지는 결정한 사람만 압니다.</b></p>
+      <div class="triad">
+        <div>
+          <div class="k">첫째</div>
+          <div class="t">목적</div>
+          <div class="d">왜 만드는지, 누가 쓸 것인지를 한두 문장으로. 이후 모든 판단이 여기에 비추어 결정됩니다.</div>
+        </div>
+        <div>
+          <div class="k">둘째</div>
+          <div class="t">흐름</div>
+          <div class="d">무엇이 있어야 하고 어떤 순서로 동작하는지. 정교할 필요 없이 큰 흐름만.</div>
+        </div>
+        <div>
+          <div class="k">셋째</div>
+          <div class="t">완료 기준</div>
+          <div class="d">무엇이 되어야 끝인지. 눈으로 보거나 눌러봐서 확인 가능한 형태로.</div>
+        </div>
+      </div>
+      <ul class="points">
+        <li><b>형태는 중요하지 않습니다</b> — 종이 한 장이든 머릿속이든. 중요한 건 그 내용이 <b>AI가 만든 것이 아니라 내가 정한 것</b>이라는 사실입니다.</li>
+        <li><b>다듬는 건 함께 해도 됩니다</b> — 내가 잡은 흐름을 보여주고 빠진 게 없는지 묻는 건 좋은 활용입니다. 최종 채택만 내가 하면 됩니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>진행하는 동안</h2><span class="tag">PART 2</span><div class="rule"></div></div>
+    <p class="note">무엇을 확인하며 나아갈 것인가</p>
+
+    <div class="chapter">
+      <div class="chapter-title"><span class="n">03</span><h3>나온 결과물을, 무엇에 비추어 확인할 것인가</h3></div>
+      <p>AI는 "완료했습니다", "정상 동작합니다"라고 말합니다. <b>그 말을 그대로 믿는 순간 판단의 주체가 다시 나에게서 AI로 넘어갑니다.</b></p>
+      <p>새 잣대는 필요 없습니다. 앞서 정리한 <b>목적 · 흐름 · 완료 기준</b> 세 가지가 그대로 확인 기준이 됩니다. 정리해둔 것이 없다면 이 단계에서 그 공백이 드러납니다 — 무엇에 비출지 몰라서 "그냥 괜찮아 보인다"로 넘어가게 되기 때문입니다.</p>
+      <div class="pull">AI의 설명을 읽는 것과 결과물을 직접 실행해보는 것은 다릅니다.</div>
+      <ul class="points">
+        <li>코드를 실행해보고, 화면을 눌러보고, 흐름을 처음부터 끝까지 눈으로 따라가야 합니다.</li>
+        <li>확인을 거치면 "이상해요, 다시 해주세요"가 아니라 <b>"흐름의 두 번째 단계가 빠졌어요"</b>처럼 말할 수 있게 됩니다.</li>
+      </ul>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-title"><span class="n">04</span><h3>막혔을 때, 원인을 찾는 주체는 누구인가</h3></div>
+      <p>가장 쉬운 선택은 오류 메시지를 그대로 복사해 "고쳐줘"라고 던지는 것입니다. 문제는 해결돼도 <b>왜 생겼는지는 내 머릿속에 남지 않습니다.</b> 이런 순간이 쌓이면 결과물은 계속 고쳐지는데 그에 대한 나의 이해는 오히려 줄어드는 역전이 생깁니다.</p>
+      <ul class="points">
+        <li><b>범위를 먼저 좁힙니다</b> — 무엇을 기대했고 실제로 무엇이 일어났는지 비교해, 정해둔 흐름의 어느 단계에서 어긋났는지 짚습니다.</li>
+        <li><b>"전체가 안 돼요" vs "n번째 단계까지는 맞는데 그다음부터 어긋나요"</b> — 후자는 이미 원인의 절반을 스스로 찾아낸 상태입니다.</li>
+        <li><b>질문은 좁혀진 범위로</b> — "왜 안 돼요"보다 "이 단계에서 이런 결과를 기대했는데 저런 결과가 나왔어요"가 훨씬 구체적인 답을 부릅니다.</li>
+        <li><b>답을 받은 뒤에도 이해는 내 몫</b> — 반복할수록 같은 종류의 문제를 다음엔 스스로 알아챌 수 있게 됩니다.</li>
+      </ul>
+      <div class="pull">이 과정을 전부 AI에게 넘기면, 결과물은 완성되어 가는데 그것을 다룰 줄 아는 사람은 여전히 AI뿐인 상태로 남습니다.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>끝난 뒤</h2><span class="tag">PART 3</span><div class="rule"></div></div>
+    <p class="note">무엇을 남길 것인가</p>
+
+    <div class="chapter">
+      <div class="chapter-title"><span class="n">05</span><h3>다음의 나를 위해 무엇을 남길 것인가</h3></div>
+      <p>완성한 시점의 나는 그 구조를 가장 잘 이해하고 있습니다. 하지만 이 이해는 옅어집니다. 몇 달 뒤 같은 결과물을 다시 열면 <b>처음 보는 사람과 크게 다르지 않은 상태</b>로 마주하게 됩니다.</p>
+      <div class="triad">
+        <div>
+          <div class="k">남길 것 1</div>
+          <div class="t">목적</div>
+          <div class="d">이걸 왜 만들었는지</div>
+        </div>
+        <div>
+          <div class="k">남길 것 2</div>
+          <div class="t">구조와 흐름</div>
+          <div class="d">무엇이 어떤 순서로 동작하는지</div>
+        </div>
+        <div>
+          <div class="k">남길 것 3</div>
+          <div class="t">막혔던 지점</div>
+          <div class="d">문제가 생겼던 부분과 원인, 해결 방법</div>
+        </div>
+      </div>
+      <ul class="points">
+        <li><b>기록은 AI에게, 검토는 내가</b> — 구조를 훑어 정리하는 일은 AI가 잘합니다. 다만 그 기록이 실제와 맞는지 읽어보는 과정은 반드시 거쳐야 합니다.</li>
+        <li><b>검토의 또 다른 쓸모</b> — AI가 정리한 기록이 이해되지 않는다면, 기록이 틀렸거나 <b>내가 아직 그 결과물을 이해하지 못하고 있다는 신호</b>입니다.</li>
+        <li><b>형태는 자유</b> — 짧은 주석이든 몇 줄 메모든. 나중의 내가 "아, 이래서 이렇게 만들었지"를 떠올릴 수 있으면 됩니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>스스로에게 던지는 네 가지 질문</h2><span class="tag">CHECK</span><div class="rule"></div></div>
+    <p class="note">작업 중에 물어보면, 지금 내가 어디쯤 서 있는지 알 수 있습니다.</p>
+    <ol class="questions">
+      <li>지금 만들고 있는 것을 한 문장으로 설명할 수 있는가</li>
+      <li>AI가 만든 결과물을 직접 실행해보고 있는가, 아니면 설명만 읽고 있는가</li>
+      <li>오류가 났을 때 어느 단계에서 어긋났는지 짚을 수 있는가</li>
+      <li>지금 이 결과물을 한 달 뒤에 다시 열어도 손볼 수 있겠는가</li>
+    </ol>
+    <p class="note" style="margin-top:16px">네 질문에 모두 답할 수 있다면, 도구가 무엇이든 그 상황을 주도하고 있는 것입니다. 답하지 못하는 질문이 있다면, 그 항목에 해당하는 부분을 다시 살펴보면 됩니다.</p>
+  </section>
+
+  <footer>
+    특강 전 사전 읽기입니다. → <a href="vibe-coding.html">특강 안내로 돌아가기</a>
+  </footer>
+
+</div>
+</body>
+</html>

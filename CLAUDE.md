@@ -38,7 +38,8 @@ index.html      개요·편성 (공개 페이지)
 roles.html      직군 지도 (공개 페이지)
 docs.html       문서 체계 (공개 페이지)
 vibe-coding.html 바이브코딩 특강 안내 (공개 페이지)
-style.css       네 페이지 공용 스타일
+ai-attitude.html AI를 대하는 태도 — 특강 사전 읽기 (공개 페이지)
+style.css       다섯 페이지 공용 스타일
 README.md       프로젝트 전체 안내
 HANDOFF.md      세션 간 인계 노트  ← 매번 읽고 매번 갱신
 docs/
