@@ -4,3 +4,7 @@ secrets*
 .DS_Store
 node_modules/
 *.zip
+
+# 회의 원본 녹취록 — 참석자 실명·발언이 그대로 담겨 있어 로컬 보관만, 저장소에는 올리지 않음
+docs/회의록/meeting-transcript.md
+docs/회의록/meeting-transcript_2.txt
